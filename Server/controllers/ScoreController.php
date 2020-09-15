@@ -94,4 +94,9 @@ class ScoreController
         }
         return true;
     }
+    public function actionAddProduct(){
+        require ROOT . '/models/Score.php';
+        Score::AddProduct();
+        return true;
+    }
 }

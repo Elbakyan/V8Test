@@ -28,8 +28,9 @@ return array(
     //Add Score
     'AddScoreAccount' => 'score/AddScoreAccount',
     //Get score
-    'GetScoreAccount'=> 'score/GetScoreAccount'
-
+    'GetScoreAccount' => 'score/GetScoreAccount',
+    //Add product
+    'AddProduct' => 'score/AddProduct'
 
 	
 );

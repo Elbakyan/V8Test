@@ -43,4 +43,10 @@ class Score
 
 
     }
+    public static function AddProduct(){
+        $Error = [];
+        global $mysql;
+
+
+    }
 }
