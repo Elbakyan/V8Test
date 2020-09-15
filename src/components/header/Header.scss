@@ -7,10 +7,20 @@ header {
   position: relative;
   z-index: 10;
 
+
+
   .header_container {
 
     justify-content: space-between;
+
     align-items: center;
+    @media (max-width: 1200px) {
+      &{
+        justify-content: center;
+        padding: 0px 10px;
+        width: 100%;
+      }
+    }
   }
 
   .logo {
@@ -21,6 +31,11 @@ header {
     img {
       width: 95px;
       height: 30px;
+      @media (max-width: 780px) {
+        &{
+          width: 50px;
+        }
+      }
     }
   }
 
@@ -68,6 +83,12 @@ header {
           font-size: 14px;
           line-height: 21px;
           color: $wheit;
+          @media (max-width: 780px) {
+            &{
+              font-size: 12px;
+              margin: 0px 10px;
+            }
+          }
           &:hover{
             text-decoration: none;
             outline: none;
