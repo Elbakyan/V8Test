@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import { Table,Button, } from 'rsuite';
 import  Arr from './arr';
-
+import  ProductList from './productList'
 
 const { Column, HeaderCell, Cell, Pagination } = Table;
 class AutoParts extends  Component {
@@ -44,6 +44,8 @@ class AutoParts extends  Component {
 
 
                     </div>
+
+                    <ProductList />
                 </div>
 
             </div>
