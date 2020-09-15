@@ -16,7 +16,36 @@ class AutoParts extends  Component {
     render() {
         return(
             <div className="auto_parts">
-                <h1>Hello</h1>
+                <div className="auto_parts">
+                    <div className="add_auto_container">
+                        <div className="add_auto_controls">
+                            <select name="mark" id="">
+                                <option>Mercedes</option>
+                            </select>
+                            <select name="model" id="">
+                                <option>Mercedes E-class</option>
+                            </select>
+                            <select name="state" id="" >
+                                <option>Նոր</option>
+                                <option>Օգտագործած</option>
+                            </select>
+                            <label>
+                                Պատվերով
+                                <input type="checkbox"/>
+                            </label>
+
+
+
+                        </div>
+                        <textarea name="" id="" placeholder="Նկարրագրություն․․․"></textarea>
+                        <div className="add_auto_btn">
+                            <Button color="violet">Ավելացնել ավտոմեքենա․․․</Button>
+                        </div>
+
+
+                    </div>
+                </div>
+
             </div>
         )
     }
