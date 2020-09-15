@@ -1,0 +1,22 @@
+$black: #000000;
+$wheit: #ffffff;
+$color_1: #101423;
+$color_2: #131921;
+$bg_btn: #673ab7;
+$green: green;
+$desktop: 18px;
+$ipade: 14px;
+$phone: 10px;
+@mixin BgImg{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+@mixin  default {
+  list-style: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+
+}

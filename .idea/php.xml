@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/Server/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/Server/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/Server/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/Server/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/Server/vendor/symfony/options-resolver" />
+      <path value="$PROJECT_DIR$/Server/vendor/composer" />
+      <path value="$PROJECT_DIR$/Server/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/Server/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/Server/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/Server/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/Server/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/Server/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/Server/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/Server/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/Server/vendor/php-http/curl-client" />
+      <path value="$PROJECT_DIR$/Server/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/Server/vendor/facebook/graph-sdk" />
+    </include_path>
+  </component>
+</project>

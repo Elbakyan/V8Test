@@ -1,0 +1,106 @@
+@import "src/style/var";
+.rs-modal-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.rs-modal-body{
+  width: 100%;
+  padding: 10px 0px;
+}
+.sotial{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+ > a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    transition: .3s;
+    border-radius: 50%;
+    padding: 3px;
+    @include  BgImg;
+    margin: 0px 5px;
+    &:hover{
+       box-shadow: 0px 0px 10px $color_1;
+     }
+
+  }
+  .facebook{
+    background-image: url(../../img/icon/facebook.svg);
+  }
+  .google{
+    background-image: url(../../img/icon/google.svg);
+  }
+}
+
+form{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    label{
+      width: 80%;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+
+
+
+      &::before{
+        content: '';
+        display: block;
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: 5px 8px;
+
+
+      }
+
+
+    }
+    .phone::before{
+      background-image: url(../../img/icon/phone.svg);
+
+    }
+    .password::before{
+      background-image: url(../../img/icon/password.svg);
+
+    }
+
+    input{
+      width: 100%;
+      padding: 10px 35px;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 1px #00000055;
+      transition: .5s;
+
+    }
+    input:focus{
+      border: 1px solid $bg_btn;
+    }
+    button{
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #4267B2;
+      transition: .3s;
+
+      &:hover{
+        background-color: darken($color: #4267B2, $amount: 10);
+      }
+
+    }
+
+  }

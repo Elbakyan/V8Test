@@ -1,0 +1,69 @@
+.container_1 {
+  height: calc(100% - 146px);
+}
+.Slider_container {
+  width: 100%;
+  height: 350px;
+  margin: 15px 0;
+  background-color: #4267b2;
+  position: relative;
+  .Slider {
+    width: 100%;
+    height: 100%;
+    .carousel-dots {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        button{
+          
+            &::before{
+                
+                color: #00ffb3;
+            }
+        }
+      }
+  }
+  .carousel-initialized {
+    width: 100%;
+    height: 100%;
+    
+ 
+    .carousel-prev {
+      &::before {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        background-image: url(../../img/icon/next.svg);
+        transform: rotate(180deg);
+        transition: 0.3s;
+      }
+      &:hover::before {
+        background-color: darken($color: #fff, $amount: 30);
+      }
+    }
+    .carousel-next {
+      &::before {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        background-image: url(https://elbakyan.am/Server/img/icon/next.svg);
+        transition: 0.3s;
+      }
+      &:hover::before {
+        background-color: darken($color: #fff, $amount: 30);
+      }
+    }
+  }
+  
+
+  .slider_items {
+    width: 100%;
+    height: 100%;
+
+    img {
+        
+      width: 100%;
+      height: 350px;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import "src/style/var";
+.Hide_Nav{
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: $color_1;
+  top: 100%;
+  padding: 10px 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: .5s;
+  >li{
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: .3s;
+    img{
+      width: 30px;
+
+    }
+    &:hover{
+      background: lighten($color_1, 30);
+    }
+
+
+    &:after{
+      display: none;
+    }
+
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: lighten($color_1, 30);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $color_1;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

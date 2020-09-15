@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="elbakyan" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="elbakyan">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/elbakyan.am/Server" local="$PROJECT_DIR$/Server" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
