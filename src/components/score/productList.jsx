@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Button} from "rsuite";
-import  './productList.scss'
+import  './productList.scss';
+import { Modal } from 'rsuite';
 
 const autoList = [
     {
@@ -69,74 +70,108 @@ class PorductList extends  Component {
     constructor(props) {
         super(props);
         this.state = {
+            show: false
+        };
+        this.close = this.close.bind(this);
+        this.open = this.open.bind(this);
+    }
+
+    componentDidMount() {
+        this.ShowClose()
+    }
+    close() {
+        this.setState({ show: false });
+    }
+    open() {
+        this.setState({ show: true });
+        console.log(this)
+    }
+
+    ShowClose(){
+        let open = this.open;
+        let mark = document.querySelectorAll('.mark_container');
+
+        mark.forEach(auto => {
+            auto.addEventListener('click',ClickMark)
+        })
+        function ClickMark(e){
+
+            this.childNodes.forEach(child => {
+                if (child.nodeName != '#text'){
+                    if (child.className != 'mark'){
+                        child.classList.toggle('show')
+                        child.addEventListener('click', (e) => {
+                            open();
+                            e.stopPropagation();
+                        });
+                        let span = child.parentElement.querySelector('.state')
+                        if (span.textContent == '+'){
+                            span.textContent = '-'
+                        }else{
+                            span.textContent = '+'
+                        }
+
+                    }
+
+                }
+            })
         }
     }
-
-    show = (e) => {
-        let block = document.querySelectorAll('.product')
-        let but = e.target
-        console.log(block[0])
-        block.forEach((e,i)=>{
-            if(i == Number(but.id)){
-                if(block[i].style.height == 'auto'){
-                    block[i].style.height = '60px'
-                    but.innerHTML = 'Ավելին'
-                }else{
-                    block[i].style.height = 'auto'
-                    but.innerHTML = 'Փակել'
-                }
-
-
-
-                console.log(block[i].style.height)
-            }
-        })
-    }
-
     render() {
+
         return (
+
             <div className="product_list">
-                {
-                    autoList.map(({id,model,mark,pat,note,nor,img},i)=>(
-                        <div className='product' key={id}  style={{height: '60px'}}>
-                            <div className="product_list_header">
-                                <div className='product_list_heading'>
-                                    <div className="product_list_name">
-                                        <h4>{model} {mark}</h4>
-                                    </div>
-                                    <div>
-                                        <h4>{pat}</h4>
-                                    </div>
-                                    <div>
-                                        <h4>{nor}</h4>
-                                    </div>
+                <div className="modal-container">
+                    <Modal show={this.state.show} onHide={this.close} size='lg'>
+                        <Modal.Header>
+                            <Modal.Title>ՀԱՏՒԿ ՆՇՈՒՄՆԵՐ․․․</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <div className="modal_container">
+                                <div className="modal_img">
+                                   <div className="img">
+                                       <img src="https://auto.am/static/offers/2497150/s-13f83abd47e7d6f19d5fdfce80b33810.jpg" alt=""/>
+                                   </div><div className="img">
+                                       <img src="https://auto.am/static/offers/2497150/s-13f83abd47e7d6f19d5fdfce80b33810.jpg" alt=""/>
+                                   </div><div className="img">
+                                       <img src="https://auto.am/static/offers/2497150/s-13f83abd47e7d6f19d5fdfce80b33810.jpg" alt=""/>
+                                   </div><div className="img">
+                                       <img src="https://auto.am/static/offers/2497150/s-13f83abd47e7d6f19d5fdfce80b33810.jpg" alt=""/>
+                                   </div><div className="img">
+                                       <img src="https://auto.am/static/offers/2497150/s-13f83abd47e7d6f19d5fdfce80b33810.jpg" alt=""/>
+                                   </div>
                                 </div>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ducimus
+                                    eveniet, exercitationem maiores qui reprehenderit. Aliquam assumenda commodi earum
+                                    eius ex facilis itaque minima, molestiae possimus qui quis sed, voluptas?
 
-                                <div className="product_list_button">
-                                    <Button color="violet">Կարգավորել</Button>
-                                    <Button color="red">Հեռացնել</Button>
-                                    <Button id = {i} color="yellow" onClick={this.show}>Ավելին</Button>
-                                </div>
+                               Corporis ducimus itaque quidem voluptatem. Accusamus alias architecto, at autem
+                                    corporis culpa eaque earum eius ex facilis illo illum ipsum iste itaque iure
+                                    laudantium obcaecati quis quos sed sequi voluptate?
+
                             </div>
-
-                            <div className='product_list_body'>
-                               <div className="product_list_img">
-                                   {
-
-                                       img.map((img,i)=>(
-                                           <div key={i}>
-                                               <img src={img} alt=""/>
-                                           </div>
-                                       ))
-                                   }
-                               </div>
-                                <div className="product_list_note">
-                                    <p>{note}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
+                        </Modal.Body>
+                    </Modal>
+                </div>
+                <ul className="mark_container">
+                    <li className='mark'>
+                        <span className="state">+</span>
+                        BMW
+                    </li>
+                    <ul className="model_container">
+                        <li className="model">
+                           <h2>E60</h2>
+                            <span>Նոր</span>
+                            <span>Օգտագործած</span>
+                            <span>Պատվերով</span>
+                            <button>X</button>
+                        </li>
+                        <li className="model">M5</li>
+                        <li className="model">M4</li>
+                        <li className="model">M3</li>
+                    </ul>
+                </ul>
             </div>
         )
     }
